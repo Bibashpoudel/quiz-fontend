@@ -1,0 +1,30 @@
+/* message box style */
+
+.success {
+  color: #20a020;
+}
+.danger {
+  color: #a02020;
+}
+.alert {
+  padding: 1rem;
+  border: 0.02rem solid transparent;
+  border: 0.5rem;
+}
+.alert-info {
+  color: #2020a0;
+  background-color: #e0e0ff;
+}
+.alert-danger {
+  color: #a02020;
+  background-color: #ffe0e0e0;
+}
+
+/* for loadingbox*/
+
+.load-spinner i {
+  margin-left: 50%;
+  margin-top: 15%;
+  font-size: 5rem;
+  color: green;
+}

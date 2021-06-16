@@ -1,38 +1,430 @@
-.App {
-  text-align: center;
+
+
+html {
+  font-size: 62.5%; /* 16px *62.5 = 10px =1rem */
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  margin: 0px;
+  height: 100%;
+  font-size: 1.6rem;
+  font-family: helvetica, Arial, sans-serif;
+ 
+}
+#global{
+  opacity: 0.3 ;
+}
+button.primary {
+  background-color: #4caf50;
+}
+button.block {
+  width: 100%;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* global */
+a{
+  text-decoration: none;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* design full section grid layout */
+.grid-container {
+  display: grid;
+  grid-template-areas:
+    "header"
+    "main"
+    "footer";
+  grid-template-columns: 1fr;
+  grid-template-rows: 10rem 1fr 5rem;
+  height: 100vh;
+}
+/* designing header section */
+header{
+  grid-area:header;
+  background-color:#203040; 
+}
+.main-header{
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  justify-content: space-between;
+  
+}
+.logo{
+  padding:2rem;
+  font-size:3rem;
+  color:white;
+
+}
+.logo a{
+  color:white;
+}
+.logo a:hover{
+  color:#ff0000;
+}
+.header-link{
+  padding:2rem;
+  margin-right:0rem;
+  margin-top:1.2rem;
+  font-size: 1.7rem;
+  
+  
+}
+
+.header-link a{
+  color:white;
+  padding:0.5rem;
+}
+.header-link a:hover{
+  color:#ff0000;
+}
+.hamburger{
+  display:none;
+  cursor: pointer;
+}
+.hamburger .one{
+  width: 3rem;
+  height:.4rem;
+  background-color: black;
+  margin:.5rem;
+  border-radius: 1rem;
+}
+/* designing coin section */
+
+.badge {
+  background-color: #f02020;
+  color: #ffffff;
+  border-radius: 50%;
+  padding: 0.2rem 0.7rem;
+  font-size: 1.4rem;
+  margin-left: 0.2rem;
+  margin-top: -1rem;
+}
+/* designing for drop down*/
+
+.dropdown{
+	display: inline-block;
+	position: relative;
+}
+.dropdown-content{
+	position: absolute;
+	display:none;
+	right: 0;
+	min-width: 12rem;
+	padding: 1rem;
+	z-index: 1;
+	background-color: whitesmoke;
+	margin: 0;
+	border-radius: 0.5rem;
+  
+}
+.dropdown-content li {
+	list-style-type: none;
+}
+.dropdown-content li a{
+  color: black !important;
+}
+.dropdown-content li a:hover{
+  color:#ff0000 !important;
+}
+.dropdown:hover .dropdown-content {
+	display: block;
+}
+/* aside section */
+aside {
+  position: fixed;
+  width: 30rem;
+  
+  height: 100%;
+  background-color: #efefef;
+  z-index: 1000;
+  transform: translateX(-30rem); 
+  transition: all 0.5s;
+  
+
+  
+}
+
+aside.open {
+  transform: translateX(0);
+  
+}
+.side-logo a{
+  display: grid;
+  place-items: center;
+  font-size:3rem;
+  padding: 2rem 0 4rem 0;
+}
+
+.close-bottom {
+  padding: .2rem .8rem .5rem;
+  float: right;
+  margin-top: -8rem;
+  font-size: 3rem;
+  background-color: grey;
+  border-radius: 50%;
+  cursor: pointer;
+  
+}
+.header-aside-link{
+  display: grid;
+  place-items: center;
+  
+}
+.header-aside-link a{
+  color:red;
+  padding:1rem
+
+}
+
+/* Main section */
+main{
+  grid-area:main;
+  display: flex;
+  place-content: center;
+  margin-bottom: 3rem;
+  
+}
+
+.endbutton{
+  display: none;
+}
+.inner-content .bibash{
+  display: none;
+  
+}
+ .startQuiz{
+  display: block;
+  width:40vw;
+  background-image: url('./image/questionbc.jpg');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  border-radius: 1rem;
+  padding:3rem 8rem;
+  box-shadow: 0 1rem 1rem -0.7rem grey;
+  margin-top:4rem;
+  color:white;
+  
+}
+.close{
+  display: none;
+}
+
+
+.information{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.inner-content h2{
+  font-size: 3rem;
+  margin: 1rem 0 2rem 0;
+  font-weight: 500; 
+}
+.option-answer{
+  display: flex !important;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  font-size: 3rem !important;
+}
+
+.first-option{
+  display: grid;
+  
+}
+.second-option{
+  display: grid;
+  
+}
+
+.inner-content li{
+  list-style: none;
+  margin-top: 1.5rem;
+  font-size: 2.2rem;
+}
+
+/* .inner-content input{
+  cursor: pointer;
+  color:#ff8000;
+  font-size: 2rem;
+} */
+.inner-content  input{
+  width: 2rem;
+  height: 2rem;
+  color:red;
+}
+.inner-content input[type=radio]:checked:after {
+  background:#ff8000;
+}
+
+.button{
+  padding: 1rem 3rem;
+  outline:none;
+  font-size: 2.4rem;
+  font-weight: 400;
+  display: block;
+  margin: auto;
+  background-color: rgb(57, 163, 57);
+  border:none;
+  border-radius: 1.2rem;
+  color:whitesmoke;
+}
+.button:hover{
+  background-color: rgb(12, 99, 12);
+  font-size: 2.6rem; 
+}
+.endQuiz{
+  display: none;
+}
+/* dashboard and category screen */
+.content{
+
+}
+.content ul{
+  display: flex !important;
+  flex-wrap: wrap !important;
+  place-content: none !important;
+  justify-content: left !important;
+  
+  
+}
+.content ul li {
+  width: 10rem;
+  padding:5rem;
+  list-style: none;
+  background:lightcoral;
+  margin:1rem;
+  border-radius: 2rem;
+  
+}
+.levelwise{
+  min-height: 10vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: grid;
+  place-content: center;
+}
+.levelwise span{
+  background-color: aliceblue;
+  padding:1rem;
+  color:green;
+  font-size: 3rem;
+  border-radius: 1rem;
+  cursor: pointer;
+}
+.levelwise span:hover{
+  padding:1.1rem;
+  color:white;
+  background-color: rgb(32, 71, 32);
+}
+.level{
+  display: flex !important;
+  flex-wrap: wrap; 
+  
+  height:2rem;
+}
+
+.level div{
+  padding: 2rem;
+  background-color: rgb(77, 184, 77);
+  margin:1rem;
+  border-radius: 1rem;
+  color:white;
+}
+.level div:hover{
+  padding:2.1rem;
+}
+.level div a{
+  color:#ffffff;
+}
+
+/* designing home screen */
+
+.homescreen{
+  display: flex;
+  
+  
+}
+.col-1{
+  
+  background-image: url(./image/firstscreen.jpg);
+  background-size: cover;
+  height: 107%;
+  width: 100%;
+  
+}
+.loadQuiz{
+  background-color: antiquewhite;
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  place-content: center;
+  flex-wrap: wrap;
+  margin:auto;
+  padding:2rem;
+  border-radius:  1rem;
+  width:30%;
+  margin-top:15%;
+}
+.loadQuiz div{
+  padding: 1rem;
+  
 }
 
-.App-link {
-  color: #61dafb;
+/* quiz load screen */
+.loadquiz-1{
+  display: grid;
+  place-content: center;
+  background-image: url(./image/back.jpg);
+  background-size: 100% 100%;
+  width:100%;
+  height: auto;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.buttonhide{
+  display: none;
 }
+/* Signin screen form design */
+
+/* designing footer secttion */
+footer{
+  background-color:#203040;
+  grid:footer;
+  display: grid;
+  justify-content: center;
+  color:#ffffff;
+  justify-items: center;
+  place-content: center;
+}
+
+/* for mobile version */
+@media screen and (max-width:704px){
+
+  /* .header-left-link{
+    display: none;
+  }
+  
+  .hamburger{
+    display:block
+  } */
+  main{
+    place-items: none;
+    
+  }
+  .inner-content h2{
+    font-size: 2rem;
+  }
+  .inner-content label{
+    font-size: 1.5rem;
+  }
+  .startQuiz{
+    
+    background-color: white;
+    width:auto;
+    padding: 0 0 1rem 0;
+    margin: 1rem 1rem 1rem 1rem;
+  }
+  .inner-content ul{
+    padding-right: 2rem;
+    margin: 1rem 1rem 1rem -2rem;
+  }
+
+  
+}
+
